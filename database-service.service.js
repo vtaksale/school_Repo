@@ -8,7 +8,6 @@ let DatabaseServiceService = class DatabaseServiceService {
         this.BaseURL = "http://localhost:54981/api/";
     }
     GetStudents() {
-        debugger;
         this.url = this.BaseURL + 'Students';
         return this._httpClient.get(this.url)
             .pipe(map(response => response));
@@ -21,11 +20,11 @@ let DatabaseServiceService = class DatabaseServiceService {
         this.url = this.BaseURL + 'Student/Create';
         this._httpClient.post(this.url, student).toPromise().then((data) => {
             console.log(data);
-            debugger;
+            
         });
     }
     updateStudent(student) {
-        debugger;
+        
         this.url = this.BaseURL + 'Student/Update';
         return this._httpClient.put(this.url, student, {
             headers: new HttpHeaders({
